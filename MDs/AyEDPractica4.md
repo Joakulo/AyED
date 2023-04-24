@@ -1,3 +1,3 @@
 <div align="center"> 
-<img src="./IMGs/ClassArbolGeneral.png"/>
+<img src="./IMG's/ClassArbolGeneral.png"/>
  </div>
