@@ -115,7 +115,8 @@ Analice la implementación en JAVA de las clases ***ArbolGeneral*** brindadas po
  <br>
  
 ```Java
-public ListaGenerica<Integer> numerosImparesMayoresQuePreOrden (ArbolGeneral <Integer> a, Integer n)
+public ListaGenerica<Integer> numerosImparesMayoresQuePreOrden (ArbolGeneral <Integer> a, Integer n) {
+  }
 ```
 
 Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n” pasados como parámetros, recorrido en preorden.
@@ -126,13 +127,35 @@ Método que retorna una lista con los elementos impares del árbol “a” que s
 <br>
 
 ```Java
+public ListaGenerica<Integer> numerosImparesMayoresQuePreOrden (ArbolGeneral<Integer> a, Integer n) {
+  ListaEnlazadaGenerica<Integer> Lista = new ListaEnlazadaGenerica<>();
+  numerosImparesMayoresQuePreOrden(Lista, a, n);
+  return Lista;
+}
 
+
+private void numerosImparesMayoresQuePreOrden (ListaGenerica<Integer> Lista, ArbolGeneral<Integer> a, Integer n) {
+
+  if ((a.getDato() % 2 == 1) & (a.getDato() > n)) {
+    Lista.agregarFinal(a.getDato());
+  }
+
+  if (a.tieneHijos()) {
+    ListaGenerica<ArbolGeneral<Integer>> listaHijos = a.getHijos();
+    listaHijos.comenzar();
+    while (!listaHijos.fin()) {
+      numerosImparesMayoresQuePreOrden(Lista, listaHijos.proximo(), n);
+    }
+  }
+}
 ```
 
 </details>
+<br>
 
 ```Java
-public ListaGenerica<Integer> numerosImparesMayoresQueInOrden (ArbolGeneral <Integer> a, Integer n)
+public ListaGenerica<Integer> numerosImparesMayoresQueInOrden (ArbolGeneral <Integer> a, Integer n) {
+  }
 ```
 
 Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n” pasados como parámetros, recorrido en inorden.
@@ -143,13 +166,42 @@ Método que retorna una lista con los elementos impares del árbol “a” que s
 <br>
 
 ```Java
+public ListaGenerica<Integer> numerosImparesMayoresQueInOrden (ArbolGeneral <Integer> a, Integer n) {
+  ListaEnlazadaGenerica<Integer> Lista = new ListaEnlazadaGenerica<>();
+  numerosImparesMayoresQueInOrden(Lista, a, n);
+  return Lista;
+}
 
+
+private void numerosImparesMayoresQueInOrden (ListaGenerica<Integer> Lista, ArbolGeneral <Integer> a, Integer n) {
+
+  if (a.tieneHijos()) {
+    ListaGenerica<ArbolGeneral<Integer>> listaHijos = a.getHijos();
+    listaHijos.comenzar();
+    numerosImparesMayoresQueInOrden(Lista, listaHijos.proximo(), n);
+  }
+
+  if ((a.getDato() % 2 == 1) & (a.getDato() > n)) {
+    Lista.agregarFinal(a.getDato());
+  }
+
+  if (a.tieneHijos()) {
+    ListaGenerica<ArbolGeneral<Integer>> listaHijos = a.getHijos();
+    listaHijos.comenzar();
+    listaHijos.proximo();
+    while (!listaHijos.fin()) {
+      numerosImparesMayoresQueInOrden(Lista, listaHijos.proximo(), n);
+    }
+  }
+}
 ```
 
 </details>
+<br>
 
 ```Java
-public ListaGenerica< Integer > numerosImparesMayoresQuePostOrden (ArbolGeneral <Integer> a, Integer n)
+public ListaGenerica< Integer > numerosImparesMayoresQuePostOrden (ArbolGeneral <Integer> a, Integer n) {
+  }
 ```
 
 Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n” pasados como parámetros recorrido en postorden.
@@ -160,13 +212,35 @@ Método que retorna una lista con los elementos impares del árbol “a” que s
 <br>
 
 ```Java
+public ListaGenerica<Integer> numerosImparesMayoresQuePostOrden (ArbolGeneral<Integer> a, Integer n) {
+  ListaEnlazadaGenerica<Integer> Lista = new ListaEnlazadaGenerica<>();
+  numerosImparesMayoresQuePostOrden(Lista, a, n);
+  return Lista;
+}
 
+  
+private void numerosImparesMayoresQuePostOrden (ListaGenerica<Integer> Lista, ArbolGeneral<Integer> a, Integer n) {
+
+  if (a.tieneHijos()) {
+    ListaGenerica<ArbolGeneral<Integer>> listaHijos = a.getHijos();
+    listaHijos.comenzar();
+    while (!listaHijos.fin()) {
+      numerosImparesMayoresQuePostOrden(Lista, listaHijos.proximo(), n);
+    }
+  }
+
+  if ((a.getDato() % 2 == 1) & (a.getDato() > n)) {
+    Lista.agregarFinal(a.getDato());
+  }
+}
 ```
 
 </details>
+<br>
 
 ```Java
-public ListaGenerica< Integer > numerosImparesMayoresQuePorNiveles(ArbolGeneral <Integer> a, Integer n)
+public ListaGenerica< Integer > numerosImparesMayoresQuePorNiveles(ArbolGeneral <Integer> a, Integer n) {
+  }
 ```
 
 Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n” pasados como parámetros, recorrido por niveles.
@@ -177,11 +251,38 @@ Método que retorna una lista con los elementos impares del árbol “a” que s
 <br>
 
 ```Java
+public ListaGenerica<Integer> numerosImparesMayoresQuePorNiveles(ArbolGeneral <Integer> a, Integer n) {
+  ColaGenerica<ArbolGeneral<Integer>> cola = new ColaGenerica<>();
+  ArbolGeneral<Integer> aux;
+  ListaGenerica<ArbolGeneral<Integer>> hijos;
+  ListaEnlazadaGenerica<Integer> Lista = new ListaEnlazadaGenerica<>();
 
+  cola.encolar(a);
+
+  while (!cola.esVacia()) {
+    aux = cola.desencolar();
+
+    if ((aux.getDato() % 2 == 1) & (aux.getDato() > n)) {
+      Lista.agregarFinal(aux.getDato());
+    }
+
+    if (aux.tieneHijos()) {
+      hijos = aux.getHijos();
+      hijos.comenzar();
+      while (!hijos.fin()) {
+        cola.encolar(hijos.proximo());
+      }
+    }
+  }
+
+  return Lista;
+}
 ```
 
 </details>
 
+‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ `b)`  Si ahora tuviera que implementar estos métodos en la clase ArbolGeneral <T>, que modificaciones haría tanto en la firma como en la implementación de los mismos? 
+  
 <br><hr id="Ejercicio_4"><br>
  
 ### Ejercicio 4
@@ -196,7 +297,33 @@ Implemente en la clase `ArbolGeneral` los siguientes métodos
 <br>
 
 ```Java
+public Integer altura() {
+  ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica();
+  ArbolGeneral<T> aux;
+  ListaGenerica<ArbolGeneral<T>> hijos;
+  Integer altura = 0;
 
+  cola.encolar(this);
+  cola.encolar(null);
+
+  while (!cola.esVacia()) {
+    aux = cola.desencolar();
+    if (aux == null) {            // Si llegue a la final de un nivel,
+      if (!cola.esVacia()) {      // y quedan datos en la cola,
+        altura++;                 // aumento el nivel,
+        cola.encolar(null);       // y marco otro cambio de nivel
+      }
+    } else if (aux.tieneHijos()) {
+      hijos = aux.getHijos();
+      hijos.comenzar();
+      while (!hijos.fin()) {
+        cola.encolar(hijos.proximo());
+      }
+    }
+  }
+
+  return altura;
+}
 ```
 
 </details>
@@ -209,7 +336,37 @@ Implemente en la clase `ArbolGeneral` los siguientes métodos
 <br>
 
 ```Java
+public Integer nivel(T dato) {
+  ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+  ArbolGeneral<T> aux = this;
+  ListaGenerica<ArbolGeneral<T>> hijos;
+  Integer nivel = 0;
 
+  cola.encolar(this);
+  cola.encolar(null);
+
+  while (!cola.esVacia()) {
+    aux = cola.desencolar();
+    if (aux == null) {
+      if (!cola.esVacia()) {        // Si saque un null y quedan datos,
+        nivel++;                    // sumo el nivel,
+        cola.encolar(null);         // agrego otro null para marcar un cambio de nivel.
+      }	
+    } else {
+      if (aux.getDato() == dato) {  // Si encontre el dato,
+        return nivel;               // devuelvo el valor actual de nivel.
+      }
+      if (aux.tieneHijos()) {       // Si no lo encontre,
+        hijos = aux.getHijos();     // sigo buscando en los hijos.
+        hijos.comenzar();
+        while (!hijos.fin()) {
+          cola.encolar(hijos.proximo());
+        }
+      }
+    }
+  }
+  return -1;		// Si llegue a este punto quiere decir que no encotro el dato, entonces devuelve -1
+}
 ```
 
 </details>
@@ -222,7 +379,40 @@ Implemente en la clase `ArbolGeneral` los siguientes métodos
 <br>
 
 ```Java
+public Integer ancho() {
+  ColaGenerica<ArbolGeneral<T>> cola = new ColaGenerica<>();
+  ArbolGeneral<T> aux;
+  ListaGenerica<ArbolGeneral<T>> hijos;
+  Integer ancho = 0, max = -1;
 
+  cola.encolar(this);
+  cola.encolar(null);
+
+  while (!cola.esVacia()) {
+    aux = cola.desencolar();
+    if (aux != null) {                  // Si saque un dato,
+      ancho++;                          // aumento el ancho del nivel actual
+      if (aux.tieneHijos()) {
+        hijos = aux.getHijos();         // Meto hijos a la cola*
+        hijos.comenzar();
+        while (!hijos.fin()) {
+          cola.encolar(hijos.proximo());
+        }
+      }
+    } else {                            // Si saque un null hago 3 cosas:
+      if (!cola.esVacia()) {            // 1.  Si quedan datos,
+        cola.encolar(null);             //	agrego otro null para marcar un cambio de nivel.
+      }
+
+      if (ancho > max) {                // 2.  Comparo la cantidad de datos del nivel que
+        max = ancho;                    // 	acabo de leer, si es mayor a max, actualizo.
+      }
+      ancho = 0;                        // 3.  Reseteo el ancho para el nuevo nivel
+    }
+  }
+
+  return max;
+}
 ```
 
 </details>
@@ -234,7 +424,7 @@ Implemente en la clase `ArbolGeneral` los siguientes métodos
 El esquema de comunicación de una empresa está organizado en una estructura jerárquica, en donde cada nodo envía el mensaje a sus descendientes. Cada nodo posee el tiempo que tarda en transmitir el mensaje. 
 
 <div align="center"> 
-<img src=""/>
+<img src="./imagenes/Practica4Ejercicio5arbolOscuro.png" width=50%/>
 
  </div>
 
@@ -309,7 +499,7 @@ Extendiendo el ejemplo en el siguiente gráfico, al llamar al método minimoCaud
 debería retornar 25.0
 
 <div align="center"> 
-<img src=""/>
+<img src="./imagenes/Practica4Ejercicio7arbolOscuro.png" width=50%/>
 
  </div>
 
