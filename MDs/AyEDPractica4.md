@@ -435,7 +435,7 @@ Para el ejemplo presentado, el promedio del nivel 0 es 14, el del nivel 1 es 16 
 - `a)` Indique y justifique qué tipo de recorrido utilizará para resolver el problema.
 - `b)` Implementar en una clase AnalizadorArbol, el método con la siguiente firma:
 
-***public int devolverMaximoPromedio (ArbolGeneral<AreaEmpresa>arbol)***
+***public int devolverMaximoPromedio (ArbolGeneral< AreaEmpresa >  arbol)***
 
 Donde ***AreaEmpresa*** es una clase que representa a un área de la empresa mencionada y que contiene la identificación de la misma representada con un ***String*** y una tardanza de transmisión de mensajes interna representada con ***int***.
 
