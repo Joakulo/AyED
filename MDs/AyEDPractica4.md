@@ -435,7 +435,10 @@ Para el ejemplo presentado, el promedio del nivel 0 es 14, el del nivel 1 es 16 
 - `a)` Indique y justifique qué tipo de recorrido utilizará para resolver el problema.
 - `b)` Implementar en una clase AnalizadorArbol, el método con la siguiente firma:
 
-***public int devolverMaximoPromedio (ArbolGeneral< AreaEmpresa >  arbol)***
+```Java
+public int devolverMaximoPromedio (ArbolGeneral<AreaEmpresa> arbol) {
+  }
+```
 
 Donde ***AreaEmpresa*** es una clase que representa a un área de la empresa mencionada y que contiene la identificación de la misma representada con un ***String*** y una tardanza de transmisión de mensajes interna representada con ***int***.
 
@@ -461,9 +464,12 @@ Se dice que un nodo n es descendiente de un nodo m si existe un camino desde m a
 Implemente un método en la clase ArbolGeneral con la siguiente firma:
 
 <br>
- 
-***public Boolean esAncestro(T a, T b):*** devuelve true si el valor a es ancestro del valor b.
 
+```Java
+public Boolean esAncestro(T a, T b) {     // devuelve true si el valor a es ancestro del valor b.
+  }
+```
+  
 <br>
  
 El cual determine si un valor a es ancestro de un valor b. 
@@ -491,7 +497,10 @@ Luego, si una de esas divisiones se vuelve a dividir, por ej. en 5 partes, cada 
 
 Se debe implementar una clase ***RedDeAguaPotable*** que contenga el método con la siguiente firma:
 
-***public double minimoCaudal(double caudal)***
+```Java
+public double minimoCaudal(double caudal) {
+  }
+```
 
 que calcule el caudal de cada nodo y determine cuál es el mínimo caudal que recibe una casa. Asuma que la estructura de caños de la red está representada por una variable de instancia de la clase RedAguaPotable y que es un ArbolGeneral.
 
