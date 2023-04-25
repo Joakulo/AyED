@@ -200,7 +200,7 @@ private void numerosImparesMayoresQueInOrden (ListaGenerica<Integer> Lista, Arbo
 <br>
 
 ```Java
-public ListaGenerica< Integer > numerosImparesMayoresQuePostOrden (ArbolGeneral <Integer> a, Integer n) {
+public ListaGenerica<Integer> numerosImparesMayoresQuePostOrden (ArbolGeneral <Integer> a, Integer n) {
   }
 ```
 
@@ -239,7 +239,7 @@ private void numerosImparesMayoresQuePostOrden (ListaGenerica<Integer> Lista, Ar
 <br>
 
 ```Java
-public ListaGenerica< Integer > numerosImparesMayoresQuePorNiveles(ArbolGeneral <Integer> a, Integer n) {
+public ListaGenerica<Integer> numerosImparesMayoresQuePorNiveles(ArbolGeneral <Integer> a, Integer n) {
   }
 ```
 
