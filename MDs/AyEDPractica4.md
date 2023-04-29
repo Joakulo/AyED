@@ -554,7 +554,39 @@ El cual determine si un valor a es ancestro de un valor b.
 <br>
 
 ```Java
-
+public boolean esAncestro(T a, T b) {
+    ArbolGeneral<T> aux = buscarAncestro(a);        // Toma el arbol/subarbol A y lo guarda en aux.
+    if(aux == null) {                               // Si no encontro el dato A, devuelve false.
+        return false;
+    }    
+    else {                                          // Si lo encontro, busca desde el arbol A,
+        if(aux.buscarAncestro(b) != null){          // el dato B, si lo encuentre, devuelve true,
+            return true;
+        }
+    }
+    return false;                                   // si no lo encuentra, devuelve false.
+}
+        
+private ArbolGeneral<T> buscarAncestro(T dato){
+    if (this.esVacio()) {                           // Si el arbol no tiene datos,
+        return null;                                // devuelve null.
+    }
+    if(this.getDato().equals(dato)) {               // Si el dato actual equivale al que estamos
+        return this;                                // buscando, devuelve el nodo.
+    }
+    
+    ArbolGeneral<T> aux;
+    ListaGenerica<ArbolGeneral<T>> hijos;
+    hijos = this.getHijos();
+    hijos.comenzar();
+    while(!hijos.fin()) {
+        aux = hijos.proximo().buscarAncestro(dato);     // Llama al metodo desde todos los hijos
+        if(aux != null) {                           // Si se devolvio algo != null, quiere decir que
+            return aux;                             // encontro el dato, asi que lo devuelve    
+            }
+    }
+    return null;
+}
 ```
 
 </details>
