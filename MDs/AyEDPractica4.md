@@ -560,14 +560,14 @@ public boolean esAncestro(T a, T b) {
         return false;
     }    
     else {                                          // Si lo encontro, busca desde el arbol A,
-        if(aux.buscarAncestro(b) != null){          // el dato B, si lo encuentre, devuelve true,
+        if(aux.buscarAncestro(b) != null) {          // el dato B, si lo encuentre, devuelve true,
             return true;
         }
     }
     return false;                                   // si no lo encuentra, devuelve false.
 }
         
-private ArbolGeneral<T> buscarAncestro(T dato){
+private ArbolGeneral<T> buscarAncestro(T dato) {
     if (this.esVacio()) {                           // Si el arbol no tiene datos,
         return null;                                // devuelve null.
     }
@@ -590,6 +590,17 @@ private ArbolGeneral<T> buscarAncestro(T dato){
 ```
 
 </details>
+
+	
+<details>
+
+<summary>▶️ Explicacion </summary>
+<br>
+
+La primera vez que se llama al metodo buscarAncestro (```ArbolGeneral<T> aux = buscarAncestro(a);```), lo que se esta haciendo es guardar el arbol/subarbol A en aux. Porque cuando busquemos B, lo vamos a tener que hacer solo desde los hijos de A. Por eso la segunda vez que se llama al metodo privado (```if (aux.buscarAncestro(b) != null) {```), lo que se esta haciendo es buscar el dato B en el arbol A. El metodo privado unicamente va a devolver un subarbol si es que encontro el nodo con el dato a buscar, por eso, si el metodo devuelve un ```null```, quiere decir que no encontro el dato a buscar. Por lo que el metodo publico devolveria false. Caso contrario, si el metodo privado devuelve algo ```!= null```, quiere decir que encontro el dato que estabamos buscando, por lo que el metodo publico devolveria true.
+	
+</details>
+
 
 <br><hr id="Ejercicio_7"><br>
  
