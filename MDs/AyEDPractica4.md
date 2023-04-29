@@ -576,8 +576,7 @@ private ArbolGeneral<T> buscarAncestro(T dato) {
     }
     
     ArbolGeneral<T> aux;
-    ListaGenerica<ArbolGeneral<T>> hijos;
-    hijos = this.getHijos();
+    ListaGenerica<ArbolGeneral<T>> hijos = this.getHijos();
     hijos.comenzar();
     while(!hijos.fin()) {
         aux = hijos.proximo().buscarAncestro(dato);     // Llama al metodo desde todos los hijos
