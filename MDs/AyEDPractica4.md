@@ -116,7 +116,7 @@ Analice la implementación en JAVA de las clases ***ArbolGeneral*** brindadas po
  
 ```Java
 public ListaGenerica<Integer> numerosImparesMayoresQuePreOrden (ArbolGeneral <Integer> a, Integer n) {
-  }
+    }
 ```
 
 Método que retorna una lista con los elementos impares del árbol “a” que sean mayores al valor “n” pasados como parámetros, recorrido en preorden.
@@ -437,7 +437,7 @@ Para el ejemplo presentado, el promedio del nivel 0 es 14, el del nivel 1 es 16 
 
 ```Java
 public int devolverMaximoPromedio (ArbolGeneral<AreaEmpresa> arbol) {
-  }
+    }
 ```
 
 Donde ***AreaEmpresa*** es una clase que representa a un área de la empresa mencionada y que contiene la identificación de la misma representada con un ***String*** y una tardanza de transmisión de mensajes interna representada con ***int***.
@@ -541,7 +541,7 @@ Implemente un método en la clase ArbolGeneral con la siguiente firma:
 
 ```Java
 public Boolean esAncestro(T a, T b) {     // devuelve true si el valor a es ancestro del valor b.
-  }
+    }
 ```
   
 <br>
@@ -616,7 +616,7 @@ Se debe implementar una clase ***RedDeAguaPotable*** que contenga el método con
 
 ```Java
 public double minimoCaudal(double caudal) {
-  }
+    }
 ```
 
 que calcule el caudal de cada nodo y determine cuál es el mínimo caudal que recibe una casa. Asuma que la estructura de caños de la red está representada por una variable de instancia de la clase RedAguaPotable y que es un ArbolGeneral.
