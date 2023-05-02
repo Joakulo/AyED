@@ -6,5 +6,5 @@ Practicas 2023
   - [Practica 1](/MDs/AyEDPractica1.md)
   - [Practica 2](/MDs/AyEDPractica2.md)
   - [Practica 3](/MDs/AyEDPractica3.md)
-  - [Practica 4](/MDs/AyEDPractica4.md)  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎   `En proceso`
+  - [Practica 4](/MDs/AyEDPractica4.md)  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎   `✅`
 
