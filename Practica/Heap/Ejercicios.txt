@@ -1,0 +1,38 @@
+2)
+a) El minimo de nodos n en una heap de altura h es 2^h.
+b) En una de las hojas.
+c) No, el 6 y 7 deberian intercambiar lugar.
+
+3)
+a) No es una heap, debido a que una heap se debe crear de forma que siempre este completa, o sea, de izquierda a derecha.
+b) No es una heap, ya que no tiene ningun criterio de ordenacion. Una heap deberia permitir la operacion DeleteMin, pero si la heap no se encuentra ordenada esta no puede ser realizada.
+
+9) Opcion b) A[3].
+
+10) Opcion c) A[10].
+
+12)
+• arreglo 1: 0 1 2 0 4 5 6 7 8 9	Ninguna de las dos
+• arreglo 2: 9 8 7 6 5 4 3 2 1 0	MaxHeap
+• arreglo 3: 5 5 5 6 6 6 6 7 7 1	Ninguna de las dos
+• arreglo 4: 9 3 9 2 1 6 7 1 2 1	MaxHeap
+• arreglo 5: 8 7 6 1 2 3 4 2 1 2	Ninguna de las dos
+
+14) Opcion c) 2*i + 1
+
+15) No. Para que un arbol binario lleno sea una Heap, este debe estar ordenado por algun criterio. Ya que una heap deberia permitir la operacion DeleteMin, pero si el arbol no se encuentra ordenado, la operacion no puede ser realizada.
+
+16) Opcion c) O(log n) - Diapositiva 6 primer PDF de Heap
+
+17) Opcion d) 87, 30, 22, 13, 25, 21, 18
+
+18) Opcion b) 87, 30, 22, 21, 25, 13, 18
+
+20) Opcion c) 9 - 2*1 + 1 = 2*4 + 1 = 9
+
+21) Resultado: 2, 15, 13, 17, 18, 23, 19, 25, 20
+            i: 1,  2,  3,  4,  5,  6,  7,  8,  9
+
+22) Opcion c) 8
+
+23) Opcion d) 4
