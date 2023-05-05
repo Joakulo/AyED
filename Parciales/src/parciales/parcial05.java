@@ -23,7 +23,7 @@ public class parcial05 {
 			while (!hijos.fin()) {
 				ArbolGeneral<Character> proximo = hijos.proximo();
 				lista.agregarFinal(proximo.getDato());
-				caminosPares(arbol, ListaGeneral, lista, nodos);
+				caminosPares(proximo, ListaGeneral, lista, nodos);
 				lista.eliminarEn(lista.tamanio());
 			}
 		}
