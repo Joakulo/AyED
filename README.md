@@ -7,4 +7,5 @@ Practicas 2023
   - [Practica 2](/MDs/AyEDPractica4.md)
   - [Practica 3](/MDs/AyEDPractica4.md)
   - [Practica 4](/MDs/AyEDPractica4.md)  ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎   `✅`
+  - [Practica Heap](/Practica/Heap)
 
