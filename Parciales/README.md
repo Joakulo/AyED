@@ -1,4 +1,4 @@
-### Parciales
+<h1 align="center"> Parciales </h1>
 
 Hice todos menos el 5
 
